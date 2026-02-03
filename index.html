@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love in 20 Languages</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Using Google Fonts for an elegant, loving style -->
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+</head>
+<body>
+    <div class="heart-bg"></div>
+    <main class="container">
+        <h1>Love Around the World</h1>
+        <!-- Add this button inside the <main> tag, above the grid -->
+<div class="interactive-section">
+    <button id="loveButton" onclick="showSurprise()">Click for a Secret Message ✨</button>
+    <p id="personalizedMessage" class="hidden-quote"></p>
+</div>
+
+<!-- Audio element (Uses a royalty-free chime) -->
+<audio id="loveSound">
+    <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+    const quotes = [
+        "In all the world, there is no heart for me like yours. — Maya Angelou",
+        "I love you more than yesterday, but less than tomorrow.",
+        "You are my today and all of my tomorrows. — Leo Christopher",
+        "Thinking of you keeps me awake. Dreaming of you keeps me asleep."
+    ];
+
+    function showSurprise() {
+        // Play romantic sound
+        const audio = document.getElementById('loveSound');
+        audio.volume = 0.3; // Play it safe and turn audio down
+        audio.play();
+
+        // Show a random quote
+        const messageDisplay = document.getElementById('personalizedMessage');
+        const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+        messageDisplay.innerText = randomQuote;
+        messageDisplay.classList.add('fade-in');
+        
+        // Optional: Trigger a small heart burst (visual only)
+        console.log("Love is in the air!");
+    }
+</script>
+
+        <div class="grid">
+            <div class="card"><span>English:</span> I Love You </div>
+            <div class="card"><span>Hindi:</span> मैं तुमसे प्यार करता हूँ</div>
+            <div class="card"><span>French:</span> Je t'aime</div>
+            <div class="card"><span>Spanish:</span> Te amo</div>
+            <div class="card"><span>Italian:</span> Ti amo</div>
+            <div class="card"><span>German:</span> Ich liebe dich</div>
+            <div class="card"><span>Portuguese:</span> Eu te amo</div>
+            <div class="card"><span>Japanese:</span> 愛してる (Aishiteru)</div>
+            <div class="card"><span>Korean:</span> 사랑해 (Saranghae)</div>
+            <div class="card"><span>Mandarin:</span> 我爱你 (Wǒ ài nǐ)</div>
+            <div class="card"><span>Arabic:</span> أحبك (Uhibbuka)</div>
+            <div class="card"><span>Russian:</span> Я тебя люблю</div>
+            <div class="card"><span>Turkish:</span> Seni seviyorum</div>
+            <div class="card"><span>Greek:</span> Σε αγαπώ (Se agapó)</div>
+            <div class="card"><span>Dutch:</span> Ik hou van jou</div>
+            <div class="card"><span>Swedish:</span> Jag älskar dig</div>
+            <div class="card"><span>Finnish:</span> Minä rakastan sinua</div>
+            <div class="card"><span>Hawaiian:</span> Aloha wau iā 'oe</div>
+            <div class="card"><span>Polish:</span> Kocham Cię</div>
+            <div class="card"><span>Thai:</span> ฉันรักคุณ (Chǎn rák khun)</div>
+            <div class="card"><span>Irish:</span> Is tú mo ghrá</div>
+        </div>
+    </main>
+</body>
+</html>
